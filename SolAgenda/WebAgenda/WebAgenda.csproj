@@ -88,6 +88,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\img\g33.jpg" />
+    <Content Include="Content\img\logo.png" />
     <Content Include="Content\landing\main.min.js" />
     <Content Include="Content\landing\style.css" />
     <Content Include="Content\plugins\datatables\datatables.css" />
@@ -183,6 +185,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Session\Login.cshtml" />
     <Content Include="Views\Soberania\Consulta.cshtml" />
+    <Content Include="Views\Shared\_Error.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -192,7 +195,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\img\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
