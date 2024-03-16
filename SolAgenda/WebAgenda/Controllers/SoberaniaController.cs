@@ -1,6 +1,7 @@
 ﻿using Entidades;
 using Negocio;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -25,6 +26,74 @@ namespace WebAgenda.Controllers
                 return View("_Error");
             }
             
+        }
+
+        public ActionResult IrAgregar()
+        {
+            return View("Agregar");
+        }
+
+        public ActionResult Agregar(string Soberania, string Responsable, string Cargo, string Telefono, string Correo, string Direccion)
+        {
+            try
+            {
+                E_Soberania soberania = new E_Soberania
+                {
+                    Soberania = Soberania,
+                    Responsable = Responsable,
+                    Cargo = Cargo,
+                    Telefono = Telefono,
+                    Correo = Correo,
+                    Direccion = Direccion
+                };
+                N_Soberania.Agregar(soberania);
+                TempData["correcto"] = $"La soberania {soberania.Soberania} se registro correctamente.";
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                TempData["error"] = ex.Message;
+                return View("_Error");
+            }
+        }
+
+        public ActionResult ObtenerParaEditar(int idSoberania)
+        {
+            try
+            {
+                E_Soberania soberania = N_Soberania.ObtenerPorId(idSoberania);
+                return View("Editar", soberania);
+            }
+            catch (Exception ex)
+            {
+                TempData["error"] = ex.Message;
+                return View("_Error");
+            }
+        }
+
+        public ActionResult Editar(int IdSoberania, string Soberania, string Responsable, string Cargo, string Telefono, string Correo, string Direccion)
+        {
+            try
+            {
+                E_Soberania soberania = new E_Soberania
+                {
+                    IdSoberania = IdSoberania,
+                    Soberania = Soberania,
+                    Responsable = Responsable,
+                    Cargo = Cargo,
+                    Telefono = Telefono,
+                    Correo = Correo,
+                    Direccion = Direccion
+                };
+                N_Soberania.Editar(soberania);
+                TempData["correcto"] = $"La soberania {soberania.Soberania} se edito correctamente.";
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                TempData["error"] = ex.Message;
+                return View("_Error");
+            }
         }
     }
 }

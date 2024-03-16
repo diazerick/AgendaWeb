@@ -186,6 +186,8 @@
     <Content Include="Views\Session\Login.cshtml" />
     <Content Include="Views\Soberania\Consulta.cshtml" />
     <Content Include="Views\Shared\_Error.cshtml" />
+    <Content Include="Views\Soberania\Agregar.cshtml" />
+    <Content Include="Views\Soberania\Editar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

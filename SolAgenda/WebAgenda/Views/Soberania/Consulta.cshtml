@@ -2,10 +2,16 @@
 @model List<E_Soberania>
 
 <div class="card card-warning card-outline">
-    <div class="card-header"><h5 class="animate__animated animate__fadeInUp animate__slow">REAA</h5></div>
+    <div class="card-header"><h4 class="animate__animated animate__fadeInUp animate__slow">SOBERANIAS</h4></div>
     <div class="card-body">
-
         <a href="/Soberania/IrAgregar" class="btn btn-warning text-white mb-3">Agregar</a>
+
+        @if (TempData["correcto"] != null)
+        {
+            <div class="alert alert-success">
+                <b>@TempData["correcto"]</b>
+            </div>
+        }
 
         <table>
             <thead>
@@ -16,7 +22,7 @@
                     <th>TELEFONO</th>
                     <th>CORREO</th>
                     <th>DIRECCION</th>
-
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -29,6 +35,10 @@
                         <td>@item.Telefono</td>
                         <td>@item.Correo</td>
                         <td>@item.Direccion</td>
+                        <td>
+                            <a href="/Soberania/ObtenerParaEditar?idSoberania=@item.IdSoberania" class="btn btn-info">Editar</a>
+                            <a href="/Soberania/ObtenerParaEditar?idSoberania=@item.IdSoberania" class="btn btn-danger">Borrar</a>
+                        </td>
                     </tr>
                 }
             </tbody>
