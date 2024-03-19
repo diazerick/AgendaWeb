@@ -1,0 +1,129 @@
+﻿@model Entidades.E_MiembroLogia
+
+<div class="card card-warning card-outline">
+    <div class="card-header"><h5 class="animate__animated animate__fadeInUp animate__slow">Editar Miembro Logia</h5></div>
+    <div class="card-body">
+        <form action="/MiembroLogia/Editar" method="post">
+            <input type="hidden" name="IdMiembro" value="@Model.IdMiembro"/>
+            <div class="form-group">
+                <label>Nombre</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><b>N</b></span>
+                    </div>
+                    <input type="text" class="form-control" name="Nombre" value="@Model.Nombre">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Cargo</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><b>C</b></span>
+                    </div>
+                    <input type="text" class="form-control" name="Cargo" value="@Model.Cargo">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Logia</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><b>L</b></span>
+                    </div>
+                    @Html.DropDownList("IdLogia", ViewBag.lstLogia as SelectList, null, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Rito</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><b>R</b></span>
+                    </div>
+                    <input type="text" class="form-control" name="Rito" value="@Model.Rito">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Grado</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><b>G</b></span>
+                    </div>
+                    <input type="text" class="form-control" name="Grado" value="@Model.Grado">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Telefono</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="far fas fa-phone"></i></span>
+                    </div>
+                    <input type="text" class="form-control" name="Telefono" value="@Model.Telefono">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Correo</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="far fa-envelope"></i></span>
+                    </div>
+                    <input type="text" class="form-control" name="Correo" value="@Model.Correo">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Fecha de Nacimiento</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="far fa-calendar"></i></span>
+                    </div>
+                    <input type="date" class="form-control" name="FechaNacimiento" value="@Model.FechaNacimiento.ToString("yyyy-MM-dd")">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Ocupación</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><b>O</b></span>
+                    </div>
+                    <input type="text" class="form-control" name="Ocupacion" value="@Model.Ocupacion">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Dirección</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><b>D</b></span>
+                    </div>
+                    <input type="text" class="form-control" id="Direccion" name="Direccion" value="@Model.Direccion">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Municipio</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><b>M</b></span>
+                    </div>
+                    <input type="text" class="form-control" name="Municipio" value="@Model.Municipio">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Ciudad / Estado</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><b>C</b></span>
+                    </div>
+                    <input type="text" class="form-control" name="Ciudad" value="@Model.Ciudad">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Nacionalidad</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><b>N</b></span>
+                    </div>
+                    <input type="text" class="form-control" name="Nacionalidad" value="@Model.Nacionalidad">
+                </div>
+            </div>
+            <input type="submit" class="btn btn-lg btn-warning" value="Editar" />
+        </form>
+    </div>
+</div>
+

@@ -41,6 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="N_GranOriente.cs" />
+    <Compile Include="N_Logia.cs" />
+    <Compile Include="N_MiembroLogia.cs" />
     <Compile Include="N_Soberania.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

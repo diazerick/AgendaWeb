@@ -9,16 +9,30 @@ using System.Web.Mvc;
 
 namespace WebAgenda.Controllers
 {
-    public class SoberaniaController : Controller
+    public class GranOrienteController : Controller
     {
-        // GET: Soberania
+        // GET: GranOriente
         public ActionResult Index()
         {
-            List<E_Soberania> lista = new List<E_Soberania>();
+            List<E_GranOriente> lista = new List<E_GranOriente>();
             try
             {
-                lista = N_Soberania.ObtenerTodos();
+                lista = N_GranOriente.ObtenerTodos();
                 return View("Consulta", lista);
+            }
+            catch (Exception ex)
+            {
+                TempData["error"] = ex.Message;
+                return View("_Error");
+            }
+        }
+
+        public ActionResult ObtenerParaEditar(int idGranOriente)
+        {
+            try
+            {
+                E_GranOriente oriente = N_GranOriente.ObtenerPorId(idGranOriente);
+                return View("Editar", oriente);
             }
             catch (Exception ex)
             {
@@ -32,12 +46,12 @@ namespace WebAgenda.Controllers
             return View("Agregar");
         }
 
-        public ActionResult Agregar(E_Soberania objSoberania)
+        public ActionResult Agregar(E_GranOriente objOriente)
         {
             try
             {
-                N_Soberania.Agregar(objSoberania);
-                TempData["correcto"] = $"La soberania {objSoberania.Soberania} se registro correctamente.";
+                N_GranOriente.Agregar(objOriente);
+                TempData["correcto"] = $"El gran oriente {objOriente.Oriente} se registro correctamente.";
                 return RedirectToAction("Index");
             }
             catch (Exception ex)
@@ -47,26 +61,12 @@ namespace WebAgenda.Controllers
             }
         }
 
-        public ActionResult ObtenerParaEditar(int idSoberania)
+        public ActionResult Editar(E_GranOriente objGranOriente)
         {
             try
             {
-                E_Soberania soberania = N_Soberania.ObtenerPorId(idSoberania);
-                return View("Editar", soberania);
-            }
-            catch (Exception ex)
-            {
-                TempData["error"] = ex.Message;
-                return View("_Error");
-            }
-        }
-
-        public ActionResult Editar(E_Soberania objSoberania)
-        {
-            try
-            {
-                N_Soberania.Editar(objSoberania);
-                TempData["correcto"] = $"La soberania {objSoberania.Soberania} se edito correctamente.";
+                N_GranOriente.Editar(objGranOriente);
+                TempData["correcto"] = $"El gran oriente {objGranOriente.Oriente} se edito correctamente.";
                 return RedirectToAction("Index");
             }
             catch (Exception ex)
@@ -76,12 +76,12 @@ namespace WebAgenda.Controllers
             }
         }
 
-        public ActionResult Borrar(int idSoberania)
+        public ActionResult Borrar(int idGranOriente)
         {
             try
             {
-                N_Soberania.Borrar(idSoberania);
-                TempData["correcto"] = $"La soberania se elimino correctamente.";
+                N_GranOriente.Borrar(idGranOriente);
+                TempData["correcto"] = $"El gran oriente se elimino correctamente.";
             }
             catch (Exception ex)
             {

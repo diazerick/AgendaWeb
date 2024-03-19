@@ -134,7 +134,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\GranOrienteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LogiaController.cs" />
+    <Compile Include="Controllers\MiembroLogiaController.cs" />
     <Compile Include="Controllers\SessionController.cs" />
     <Compile Include="Controllers\SoberaniaController.cs" />
     <Compile Include="Global.asax.cs">
@@ -188,6 +191,15 @@
     <Content Include="Views\Shared\_Error.cshtml" />
     <Content Include="Views\Soberania\Agregar.cshtml" />
     <Content Include="Views\Soberania\Editar.cshtml" />
+    <Content Include="Views\GranOriente\Consulta.cshtml" />
+    <Content Include="Views\GranOriente\Agregar.cshtml" />
+    <Content Include="Views\GranOriente\Editar.cshtml" />
+    <Content Include="Views\Logia\Consulta.cshtml" />
+    <Content Include="Views\Logia\Agregar.cshtml" />
+    <Content Include="Views\Logia\Editar.cshtml" />
+    <Content Include="Views\MiembroLogia\Consulta.cshtml" />
+    <Content Include="Views\MiembroLogia\Agregar.cshtml" />
+    <Content Include="Views\MiembroLogia\Editar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

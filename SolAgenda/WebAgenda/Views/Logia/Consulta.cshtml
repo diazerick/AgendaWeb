@@ -1,10 +1,12 @@
 ﻿@using Entidades
-@model List<E_Soberania>
+@model List<E_Logia>
+
+<h3>Gran Supremo Consejo</h3>
 
 <div class="card card-warning card-outline">
-    <div class="card-header"><h4 class="animate__animated animate__fadeInUp animate__slow">SOBERANIAS</h4></div>
+    <div class="card-header"><h4 class="animate__animated animate__fadeInUp animate__slow">Logias Por Estado</h4></div>
     <div class="card-body">
-        <a href="/Soberania/IrAgregar" class="btn btn-warning text-white mb-3">Agregar</a>
+        <a href="/Logia/IrAgregar" class="btn btn-warning text-white mb-3">Agregar</a>
 
         @if (TempData["correcto"] != null)
         {
@@ -16,7 +18,7 @@
         <table>
             <thead>
                 <tr>
-                    <th>SOBERANIA</th>
+                    <th>LOGIA</th>
                     <th>RESPONSABLE</th>
                     <th>CARGO</th>
                     <th>TELEFONO</th>
@@ -26,18 +28,18 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (E_Soberania item in Model)
+                @foreach (E_Logia item in Model)
                 {
                     <tr>
-                        <td>@item.Soberania</td>
+                        <td>@item.Logia</td>
                         <td>@item.Responsable</td>
                         <td>@item.Cargo</td>
                         <td>@item.Telefono</td>
                         <td>@item.Correo</td>
                         <td>@item.Direccion</td>
                         <td>
-                            <a href="/Soberania/ObtenerParaEditar?idSoberania=@item.IdSoberania" class="btn btn-info">Editar</a>
-                            <a href="/Soberania/Borrar?idSoberania=@item.IdSoberania" class="btn btn-danger">Borrar</a>
+                            <a href="/Logia/ObtenerParaEditar?idLogia=@item.IdLogia" class="btn btn-info">Editar</a>
+                            <a href="/Logia/Borrar?idLogia=@item.IdLogia" class="btn btn-danger">Borrar</a>
                         </td>
                     </tr>
                 }
@@ -45,3 +47,4 @@
         </table>
     </div>
 </div>
+

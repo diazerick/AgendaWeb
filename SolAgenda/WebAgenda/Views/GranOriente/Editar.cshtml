@@ -1,17 +1,17 @@
-﻿@model Entidades.E_Soberania
+﻿@model Entidades.E_GranOriente
 
 <div class="card card-warning card-outline">
-    <div class="card-header"><h5 class="animate__animated animate__fadeInUp animate__slow">Editar Soberania</h5></div>
+    <div class="card-header"><h5 class="animate__animated animate__fadeInUp animate__slow">Editar Gran Oriente</h5></div>
     <div class="card-body">
-        <form action="/Soberania/Editar" method="post">
-            <input type="hidden" name="IdSoberania" value="@Model.IdSoberania"/>
+        <form action="/GranOriente/Editar" method="post">
+            <input type="hidden" name="IdGranOriente" value="@Model.IdGranOriente" />
             <div class="form-group">
                 <label>Nombre</label>
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><b>N</b></span>
                     </div>
-                    <input type="text" class="form-control" name="Soberania" value="@Model.Soberania">
+                    <input type="text" class="form-control" name="Oriente" value="@Model.Oriente">
                 </div>
             </div>
             <div class="form-group">

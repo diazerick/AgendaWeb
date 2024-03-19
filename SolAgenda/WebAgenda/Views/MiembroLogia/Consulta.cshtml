@@ -1,0 +1,67 @@
+﻿@using Entidades
+@model List<E_MiembroLogia>
+
+<h3>Gran Supremo Consejo</h3>
+
+<div class="card card-warning card-outline">
+    <div class="card-header"><h4 class="animate__animated animate__fadeInUp animate__slow">Miembros Por Logia</h4></div>
+    <div class="card-body">
+        <a href="/MiembroLogia/IrAgregar" class="btn btn-warning text-white mb-3">Agregar</a>
+
+        @if (TempData["correcto"] != null)
+        {
+            <div class="alert alert-success">
+                <b>@TempData["correcto"]</b>
+            </div>
+        }
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre Completo</th>
+                    <th>Cargo</th>
+                    <th>Logia</th>
+                    <th>Rito</th>
+                    <th>Grado</th>
+                    <th>Télefono</th>
+                    <th>Correo</th>
+                    <th>Edad</th>
+                    <th>Fecha de Nacimiento</th>
+                    <th>Ocupación</th>
+                    <th>Dirección</th>
+                    <th>Municipio</th>
+                    <th>Ciudad/Estado</th>
+                    <th>Nacionalidad</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (E_MiembroLogia item in Model)
+                {
+                    <tr>
+                        <td>@item.Nombre</td>
+                        <td>@item.Cargo</td>
+                        <td>@item.Logia</td>
+                        <td>@item.Rito</td>
+                        <td>@item.Grado</td>
+                        <td>@item.Telefono</td>
+                        <td>@item.Correo</td>
+                        <td>@item.Edad</td>
+                        <td>@item.FechaNacimiento.ToString("dd/MM/yyyy")</td>
+                        <td>@item.Ocupacion</td>
+                        <td>@item.Direccion</td>
+                        <td>@item.Municipio</td>
+                        <td>@item.Ciudad</td>
+                        <td>@item.Nacionalidad</td>
+                        <td>
+                            <a href="/MiembroLogia/ObtenerParaEditar?idMiembro=@item.IdMiembro" class="btn btn-info">Editar</a>
+                            <a href="/MiembroLogia/Borrar?idMiembro=@item.IdMiembro" class="btn btn-danger">Borrar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

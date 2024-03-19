@@ -1,7 +1,6 @@
 ﻿using Entidades;
 using Negocio;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,15 +8,14 @@ using System.Web.Mvc;
 
 namespace WebAgenda.Controllers
 {
-    public class SoberaniaController : Controller
+    public class LogiaController : Controller
     {
-        // GET: Soberania
         public ActionResult Index()
         {
-            List<E_Soberania> lista = new List<E_Soberania>();
+            List<E_Logia> lista = new List<E_Logia>();
             try
             {
-                lista = N_Soberania.ObtenerTodos();
+                lista = N_Logia.ObtenerTodos();
                 return View("Consulta", lista);
             }
             catch (Exception ex)
@@ -32,12 +30,12 @@ namespace WebAgenda.Controllers
             return View("Agregar");
         }
 
-        public ActionResult Agregar(E_Soberania objSoberania)
+        public ActionResult Agregar(E_Logia objLogia)
         {
             try
             {
-                N_Soberania.Agregar(objSoberania);
-                TempData["correcto"] = $"La soberania {objSoberania.Soberania} se registro correctamente.";
+                N_Logia.Agregar(objLogia);
+                TempData["correcto"] = $"La logia {objLogia.Logia} se registro correctamente.";
                 return RedirectToAction("Index");
             }
             catch (Exception ex)
@@ -47,12 +45,12 @@ namespace WebAgenda.Controllers
             }
         }
 
-        public ActionResult ObtenerParaEditar(int idSoberania)
+        public ActionResult ObtenerParaEditar(int idLogia)
         {
             try
             {
-                E_Soberania soberania = N_Soberania.ObtenerPorId(idSoberania);
-                return View("Editar", soberania);
+                E_Logia logia = N_Logia.ObtenerPorId(idLogia);
+                return View("Editar", logia);
             }
             catch (Exception ex)
             {
@@ -61,12 +59,12 @@ namespace WebAgenda.Controllers
             }
         }
 
-        public ActionResult Editar(E_Soberania objSoberania)
+        public ActionResult Editar(E_Logia objLogia)
         {
             try
             {
-                N_Soberania.Editar(objSoberania);
-                TempData["correcto"] = $"La soberania {objSoberania.Soberania} se edito correctamente.";
+                N_Logia.Editar(objLogia);
+                TempData["correcto"] = $"La logia {objLogia.Logia} se edito correctamente.";
                 return RedirectToAction("Index");
             }
             catch (Exception ex)
@@ -76,12 +74,12 @@ namespace WebAgenda.Controllers
             }
         }
 
-        public ActionResult Borrar(int idSoberania)
+        public ActionResult Borrar(int idLogia)
         {
             try
             {
-                N_Soberania.Borrar(idSoberania);
-                TempData["correcto"] = $"La soberania se elimino correctamente.";
+                N_Logia.Borrar(idLogia);
+                TempData["correcto"] = $"La logia se elimino correctamente.";
             }
             catch (Exception ex)
             {

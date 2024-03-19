@@ -43,6 +43,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="D_Conexion.cs" />
+    <Compile Include="D_GranOriente.cs" />
+    <Compile Include="D_Logia.cs" />
+    <Compile Include="D_MiembroLogia.cs" />
     <Compile Include="D_Soberania.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

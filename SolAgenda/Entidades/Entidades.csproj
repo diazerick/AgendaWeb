@@ -41,6 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="E_GranOriente.cs" />
+    <Compile Include="E_Logia.cs" />
+    <Compile Include="E_MiembroLogia.cs" />
     <Compile Include="E_Soberania.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
